@@ -1,17 +1,17 @@
-sentence1 = 'To be or not to be'
+loan_amount =  '15,000'
+apr = '5'
+loan_duration = '48'
 
-def string_lengths(sentence)
-  strings = sentence.split
-  lengths = []
-  counter = 1
+monthly_interest = (apr.to_f / 100) / 12
 
-  until counter == strings.size do
-    word_length = strings[counter - 1].length
-    lengths.push(word_length)
-    counter += 1
-  end
+puts loan_amount
+puts apr
+puts loan_duration
+puts monthly_interest
 
-  lengths
-end
+# m = p * (j / (1 - (1 + j)**(-n)))
 
-p string_lengths(sentence1)
+monthly_payment = (loan_amount.to_i * (monthly_interest / (1 - (1 + monthly_interest)**(-loan_duration.to_i)))) * 1000
+
+puts monthly_payment.round(2)
+
