@@ -30,7 +30,6 @@ end
 prompt "Welcome to the auto loan calculator!"
 
 loop do # main loop
-
   loan_amount = ''
 
   loop do # loan amount & validation
@@ -97,6 +96,5 @@ loop do # main loop
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
-
 
 prompt "Thank you for using the car loan calculator."
