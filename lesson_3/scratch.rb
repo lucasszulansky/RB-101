@@ -1,13 +1,11 @@
-def factors(number)
-  divisor = number
-  factors = []
-  begin
-    factors << number / divisor if number % divisor == 0
-    divisor -= 1
-  end until divisor == 0
-  factors
-end
+def dot_separated_ip_address?(input_string)
+  dot_separated_words = input_string.split(".")
+    return false unless dot_separated_words.size == 4
 
-puts "Enter number"
-answer = gets.chomp.to_i
-puts factors(answer)
+  while dot_separated_words.size > 0 do
+    word = dot_separated_words.pop
+    return false unless is_an_ip_number?(word)
+  end
+
+  true
+end
